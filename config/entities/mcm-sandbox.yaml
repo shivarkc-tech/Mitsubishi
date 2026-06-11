@@ -1,0 +1,39 @@
+# =============================================================================
+# MCM Sandbox Entity Configuration
+# This simulates the real MCM network_core YAML structure.
+# =============================================================================
+
+entity: mcm-sandbox
+routing_domain: L2
+region: eu-west-2
+
+network_core:
+  tgw_name: TGW-L2-MCM-SANDBOX-GB
+  amazon_side_asn: 65182
+
+  # Per-VPN routing mode.
+  # true  = static routing
+  # false = BGP / dynamic routing
+  customer_gateways:
+    vpn1:
+      name: wilton-primary-live-static
+      ip_address: 185.207.71.33
+      bgp_asn: 65501
+      static_routes_only: true
+
+    vpn2:
+      name: cato-primary
+      ip_address: 216.252.191.108
+      bgp_asn: 64515
+      static_routes_only: true
+
+    vpn3:
+      name: cato-secondary
+      ip_address: 159.117.240.172
+      bgp_asn: 64515
+      static_routes_only: true
+
+tags:
+  Environment: sandbox
+  ManagedBy: Terraform
+  Purpose: mixed-vpn-routing-drift-lab
