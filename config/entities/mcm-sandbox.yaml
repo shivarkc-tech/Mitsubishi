@@ -19,13 +19,13 @@ network_core:
       name: wilton-primary-live-static
       ip_address: 185.207.71.33
       bgp_asn: 65501
-      static_routes_only: true
+      static_routes_only: false
 
     vpn2:
       name: cato-primary
       ip_address: 216.252.191.108
       bgp_asn: 64515
-      static_routes_only: true
+      static_routes_only: false
 
     vpn3:
       name: cato-secondary
